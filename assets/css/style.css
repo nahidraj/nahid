@@ -758,6 +758,7 @@ p {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex: 0 0 auto;
 }
 
 .work-experiance-card .work-experiance-slider li .info .icon img {
@@ -989,7 +990,7 @@ p {
 	margin-bottom: 60px;
 }
 
-.content-box-card .more-about-me b{
+.content-box-card .more-about-me b {
 	color: var(--primary);
 }
 

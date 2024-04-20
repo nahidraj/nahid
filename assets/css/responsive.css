@@ -75,6 +75,11 @@
   .leave-comments-area .comments-box {
     padding: 24px;
   }
+
+  .work-experiance-card .work-experiance-slider li .date {
+    margin-right: 12px;
+  }
+
 }
 
 @media (max-width:1199.98px) {
@@ -482,5 +487,14 @@
     width: 100%;
     font-size: 18px;
     height: 64px;
+  }
+
+  .work-experiance-card .work-experiance-slider li .date {
+    flex: 0 0 auto;
+    margin-bottom: 10px;
+  }
+
+  .work-experiance-card .work-experiance-slider li {
+    display: block !important;
   }
 }
