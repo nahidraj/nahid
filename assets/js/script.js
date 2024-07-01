@@ -16,6 +16,36 @@
 		});
 	});
 
+	// copy html content
+	const copyButtons = document.querySelectorAll('.copy');
+
+	copyButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			const listItem = button.closest('li');
+			const htmlContent = listItem.querySelector('.block pre').textContent.trim();
+
+			// Create a temporary textarea to copy the text
+			const textarea = document.createElement('textarea');
+			textarea.value = htmlContent;
+			document.body.appendChild(textarea);
+
+			// Select and copy the text
+			textarea.select();
+			document.execCommand('copy');
+
+			// Remove the textarea
+			document.body.removeChild(textarea);
+
+			// Change button text to 'Copied'
+			button.textContent = 'Copied';
+
+			// Reset button text after 2 seconds
+			setTimeout(() => {
+				button.textContent = 'Copy';
+			}, 2000);
+		});
+	});
+
 	// Mobile menu control js
 	$(".mobile-menu-control-bar").on("click", function () {
 		$(".mobile-menu-overlay").addClass("show");
@@ -28,12 +58,12 @@
 
 	// Parallax scroll effect js
 	document.querySelectorAll(".move-with-cursor").forEach(a => {
-		document.addEventListener("mousemove", function (e) {
-			var t = e.clientX,
-				e = e.clientY;
-			a.style.transition = "transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)", a.style.transform = `translate(${.01 * t}px, ${.01 * e}px) rotate(${.01 * (t + e)}deg)`
-		})
-	}),
+			document.addEventListener("mousemove", function (e) {
+				var t = e.clientX,
+					e = e.clientY;
+				a.style.transition = "transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)", a.style.transform = `translate(${.01 * t}px, ${.01 * e}px) rotate(${.01 * (t + e)}deg)`
+			})
+		}),
 
 		// Email copy button js
 		new ClipboardJS('.btn-copy');
@@ -75,7 +105,7 @@
 				slidesToShow: 1,
 				slidesToScroll: 1,
 			}
-		},]
+		}, ]
 	});
 
 	// Article publications slider js
@@ -95,7 +125,7 @@
 				slidesToShow: 1,
 				slidesToScroll: 1,
 			}
-		},]
+		}, ]
 	});
 
 })(jQuery);
