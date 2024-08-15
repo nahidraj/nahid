@@ -2461,6 +2461,11 @@ pre {
 	display: flex;
 }
 
+.price_box{
+	position: sticky;
+	top:90px;
+}
+
 /*=============================
 	11. Theme Control CSS Start
 ===============================*/
